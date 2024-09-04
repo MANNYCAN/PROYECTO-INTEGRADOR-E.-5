@@ -21,3 +21,41 @@
     color: #e5ebd2;
 
 }
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #e5ebd2; /* Color de fondo principal */
+    color: #11220b; /* Color principal del texto */
+}
+
+/* Estilo para el título "Acerca de Nosotros" */
+.acerca-titulo {
+    text-align: center;
+    font-weight: 550;
+    color: #11220b; /* Verde oscuro para el título principal */
+    }
+
+/* Estilo para el rectángulo de color */
+.team-section {
+    background-color: #404866; /* Rectángulo con fondo verde grisáceo */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #e5ebd2; /* Texto dentro del rectángulo en color claro */
+}
+
+/* Título más pequeño dentro del rectángulo */
+.team-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e5ebd2; /* Color claro para el título dentro del rectángulo */
+}
+
+/* Estilo para la imagen dentro del rectángulo */
+.team-image {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    margin: 10px auto;
+    border: 3px solid #92af5a; /* Borde de imagen en verde claro */
+    }
