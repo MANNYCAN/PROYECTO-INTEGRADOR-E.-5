@@ -1,0 +1,23 @@
+
+
+#header{
+    padding-left: 0px;
+
+}
+
+.container-fluid, .navbar-toggler, .navbar-toggler-icon, .nav-link{
+    color: #e5ebd2;
+}
+.navbar{
+    padding-top: 0px;
+    font-family: "Public Sans";
+}
+
+.navbar-toggler{
+    border-color: #e5ebd2;
+    margin-bottom: 10px;
+}
+.navbar-toggler-icon{
+    color: #e5ebd2;
+
+}
