@@ -59,3 +59,85 @@ body {
     margin: 10px auto;
     border: 3px solid #92af5a; /* Borde de imagen en verde claro */
     }
+
+
+    .col {
+        width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+        .col {
+            width: 50%; 
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .col {
+            width: 50%; 
+        }
+    }
+    
+    
+    
+    .card-title{
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+    }
+    .card-subtitle{
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+    
+    }
+    .card-text{
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+    }
+    .text-body-secondary{
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+    }
+    
+    .img-fluid, .rounded-start{  
+        width: 220px;
+        height: 220px;
+        margin: 12px auto;
+        border-radius: 30px;
+        border: #49761a 3px solid;
+    }
+    /* Ajustas en FIGAM dimensiones de foto */
+    
+    .card, .mb-3{
+        margin: 10px 10px;
+        background-color: #404866;
+        /* border: 2px solid;
+        border-color: black; */
+    }
+    
+    .icon-links{
+        margin: 0px 8px 0px 8px;
+    }
+    
+    .justify-content-center{
+        background-color: #E5EBD2;
+    }
+    
+    .container-cards{
+        margin: 0px 100px 0px 100px;
+    }
+    
+    .text-body-secondary{
+        font-family: "Public Sans", sans-serif;
+        color: #E5EBD2;
+    }
