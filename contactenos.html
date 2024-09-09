@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contactenos</title>
@@ -12,8 +12,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="footer/styleFooter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  </head>
-  <body>
+</head>
+<body>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" style="background-color: #404866">
@@ -79,30 +79,32 @@
 
     <div class="container team-section" id="container_contactenos">
         <h2 id="contactenos_title">Contáctenos</h2>
+        <form method="POST" action="https://formspree.io/f/meojdblr" id="contact_form">
 
-        <div class="mb-3">
-            <label for="User_id" class="form-label">Usuario:</label>
-            <input type="text" class="form-control" id="User_id" placeholder="Ingrese su nombre">
-          </div>
-        <div class="mb-3">
-            <label for="user_phoneNumber" class="form-label">Número de teléfono:</label>
-            <input type="number" class="form-control" id="user_phoneNumber" placeholder="Ingrese su número telefónico">
-          </div>
-        <div class="mb-3">
-            <label for="user_email" class="form-label">Correo electrónico:</label>
-            <input type="email" class="form-control" id="user_email" placeholder="dirección@dominio.com">
-          </div>
-          <div class="mb-3">
-            <label for="user_message" class="form-label">Mensaje:</label>
-            <textarea class="form-control" id="user_message" rows="3" placeholder="Ingrese su mensaje"></textarea>
-          </div>
-        
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button" id="button_contactenos">Enviar</button>
-          </div>
-
+            <div class="mb-3">
+                <label for="User_id" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" id="User_id" name="User_id" placeholder="Ingrese su nombre">
+            </div>
+            <div class="mb-3">
+                <label for="user_phoneNumber" class="form-label">Número de teléfono:</label>
+                <input type="number" class="form-control" name="user_phoneNumber" id="user_phoneNumber" placeholder="Ingrese su número telefónico">
+            </div>
+            <div class="mb-3">
+                <label for="user_email" class="form-label">Correo electrónico:</label>
+                <input type="email" class="form-control" name="user_email" id="user_email" placeholder="dirección@dominio.com">
+            </div>
+            <div class="mb-3">
+                <label for="user_message" class="form-label">Mensaje:</label>
+                <textarea class="form-control" name="user_message"  id="user_message" rows="3" placeholder="Ingrese su mensaje"></textarea>
+            </div>
+            
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="submit" id="button_contactenos">Enviar</button>
+            
+            </div>
+        </form>
     </div>
-   
+
 
     <div id="footer-placeholder"></div>
 
@@ -118,5 +120,5 @@
         loadFooter();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
