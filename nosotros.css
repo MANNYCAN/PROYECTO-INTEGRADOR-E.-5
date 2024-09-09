@@ -28,6 +28,22 @@ body {
     color: #11220b; /* Color principal del texto */
 }
 
+/*Estilos generales para los h */
+/*h1 */
+h1{
+    font-size: 72px;
+}
+
+/*h2 */
+h2{
+    font-size: 56px;
+}
+
+/*h3 */
+h3{
+    font-size: 36px;
+}
+
 /* Estilo para el título "Acerca de Nosotros" */
 .acerca-titulo {
     text-align: center;
@@ -140,4 +156,39 @@ body {
     .text-body-secondary{
         font-family: "Public Sans", sans-serif;
         color: #E5EBD2;
+    }
+
+    #contactenos_title{
+        text-align: center;
+    }
+
+    #container_contactenos{
+        margin-bottom: 20px;
+    }
+
+    #button_contactenos{
+        background-color: #4a741a;
+        border-color: #4a741a;
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+        
+    }
+
+    #button_contactenos:hover{
+        background-color: #92af5a;
+        border-color: #4a741a;
+        
+    }
+
+    @media (max-width: 430px) {
+        #contactenos_title{
+            font-size: 22px;
+        }
+
+        label{
+            font-size: 16px;
+        }
     }
