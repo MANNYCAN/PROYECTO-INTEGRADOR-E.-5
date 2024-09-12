@@ -44,6 +44,11 @@ function loadNavbar() {
                     d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
             </svg>
         </a>
+         <style>
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E5EBD2'%3e%3cpath fill-rule='evenodd' d='M1.5 12.5a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13z'/%3e%3c/svg%3e");
+        }
+        </style>  
         <!-- Falta color claro en las lineas de la hamburguesa... no se ha logrado cambiar hasta el momento, solo el fondo -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +59,10 @@ function loadNavbar() {
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/#">Promociones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./listaItems.html">Artículos</a>
                 </li>
 
                 <li class="nav-item">
