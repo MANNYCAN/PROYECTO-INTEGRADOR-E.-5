@@ -9,8 +9,17 @@
     color: #e5ebd2;
 }
 .navbar{
-    padding-top: 0px;
+    
+    padding: 0px;
     font-family: "Public Sans";
+    position:fixed;
+    z-index: 20;
+    width: 100%;
+    right: 0;
+    top: 0;
+}
+#titleProducts{
+    margin-top: 50px;
 }
 
 .navbar-toggler{
@@ -140,6 +149,9 @@ h3{
         /* border: 2px solid;
         border-color: black; */
     }
+    .card:hover{
+        transform: scale(1.1);
+    }
     
     .icon-links{
         margin: 0px 8px 0px 8px;
@@ -196,4 +208,37 @@ h3{
     .img_carrusel{
     max-width: 100%;
     /* height: auto */
+    }
+
+    .descripcion{
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .btnCard{
+        display: inline-block;
+        width: 180px;
+        height: 40px;
+        background-color: #4a741a;
+        color: #E5EBD2;
+        text-decoration: none;
+        border-radius: 25px;
+        line-height: 40px;
+        text-align: center;
+        
+    }
+    .btnCard:hover{
+        background-color: #92af5a;
+        border-color: #4a741a;
+    }
+
+    .card-img-top{
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 8px 8px 8px #92af5a;
+    
+    }
+
+    .bii{
+        margin-left: 50px;
     }
