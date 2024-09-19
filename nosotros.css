@@ -41,6 +41,7 @@ body {
 /*h1 */
 h1{
     font-size: 72px;
+    text-align: center;
 }
 
 /*h2 */
@@ -178,7 +179,7 @@ h3{
         margin-bottom: 20px;
     }
 
-    #button_contactenos{
+    .botones{
         background-color: #4a741a;
         border-color: #4a741a;
         font-family: "Public Sans", sans-serif;
@@ -189,7 +190,7 @@ h3{
         
     }
 
-    #button_contactenos:hover{
+    .botones:hover{
         background-color: #92af5a;
         border-color: #4a741a;
         
