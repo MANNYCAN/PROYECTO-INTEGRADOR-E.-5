@@ -6,6 +6,10 @@ function loadFooter() {
     footer_placeholder.insertAdjacentHTML("afterbegin",
         `
         <div class="container">
+        
+        <div class="container row-cols-4 text-center">
+    <a class="btn btn-primary" id="button_contactenos" href="#" role="button">Agregar producto</a>
+    </div>
             <h3 id="redesFooter">Redes sociales</h3>
             <div class="containerFooter">
                 <a href="#" class="iconsFooter">
@@ -59,11 +63,7 @@ function loadNavbar() {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/#">Promociones</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="./listaItems.html">Artículos</a>
+                    <a class="nav-link" href="./listaDeProductos.html">Productos</a>
                 </li>
 
                 <li class="nav-item">
@@ -101,6 +101,7 @@ function loadNavbar() {
         </div>
     </div>
 </nav>
+
     `)
 }
 
