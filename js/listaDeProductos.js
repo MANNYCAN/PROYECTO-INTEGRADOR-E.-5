@@ -1,5 +1,7 @@
 let productCard = document.getElementById("productCard");
 
+let arregloProductos= [];
+
 ////////////////////// Funcion de JC style="width: 18rem; height: 24rem;
 function addItem(item) {
     const itemHTML = `     
@@ -102,3 +104,31 @@ addItem({
     'price': 250
     
 })
+
+
+
+let productData=0;
+
+let nuevoArray=0;
+
+//window.addEventListener("load", function(event){
+
+    if(this.localStorage.getItem("productData")!=null){
+        productData = JSON.parse(this.localStorage.getItem("productData"));
+        arregloProductos.push(productData);
+       this.localStorage.setItem("productArray",JSON.stringify(arregloProductos));
+       addItem(productData);
+       this.localStorage.removeItem("productData");
+       
+        let nuevoArray= JSON.parse(this.localStorage.getItem("productArray"));
+       window.alert("SE REGISTRO EL PRODUCTO CON  ENVIADO SUS DATOS CON ÉXITO"); 
+    //alertMensaje.innerHTML=`Hola, <strong>${this.localStorage.getItem("nombre")} </strong>, bienvenido/a de nuevo`;
+    }//if nombre!=null
+
+    //alertMensaje.style.display="block"; //Para que se muestre, si esto solo agregas al div pero no lo muestra
+
+//});//load
+
+for(let i=0; i<nuevoArray.length;i++){
+    addItem(nuevoArray[i])
+}
