@@ -8,7 +8,7 @@ function loadFooter() {
         <div class="container">
         
         <div class="container row-cols-4 text-center">
-    <a class="btn btn-primary botones"  href="#" role="button">Agregar producto</a>
+    <a class="btn btn-primary botones"  href="./formularioCreacion.html" role="button">Agregar producto</a>
     </div>
             <h3 id="redesFooter">Redes sociales</h3>
             <div class="containerFooter">

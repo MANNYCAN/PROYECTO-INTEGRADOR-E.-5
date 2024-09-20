@@ -181,7 +181,7 @@ h3{
         margin-bottom: 20px;
     }
 
-    .botones{
+    .botones, .cloudinary-button{
         background-color: #4a741a;
         border-color: #4a741a;
         font-family: "Public Sans", sans-serif;
