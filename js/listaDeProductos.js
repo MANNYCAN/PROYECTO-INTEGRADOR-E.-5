@@ -1,6 +1,6 @@
 let productCard = document.getElementById("productCard");
 
-let arregloProductos= [];
+//let arregloProductos= [];
 
 ////////////////////// Funcion de JC style="width: 18rem; height: 24rem;
 function addItem(item) {
@@ -30,7 +30,8 @@ addItem({
     name: "t-shirt",
     img: 'https://static.vecteezy.com/system/resources/previews/007/375/417/non_2x/yellow-t-shirt-sport-jersey-design-vector.jpg',
     description: "Camiseta deportiva Lorem Ipsum - amarillo",
-    price: 250
+    price: 250,
+
 });
 
 addItem({
@@ -107,28 +108,43 @@ addItem({
 
 
 
-let productData=0;
-
-let nuevoArray=0;
-
 //window.addEventListener("load", function(event){
+let arrraP= [];   
 
-    if(this.localStorage.getItem("productData")!=null){
-        productData = JSON.parse(this.localStorage.getItem("productData"));
-        arregloProductos.push(productData);
-       this.localStorage.setItem("productArray",JSON.stringify(arregloProductos));
-       addItem(productData);
-       this.localStorage.removeItem("productData");
+    for (let i = 0; i < this.localStorage.length; i++) {
+        let key = this.localStorage.key(i);
+        const value = JSON.parse(this.localStorage.getItem(key));
+        key=Number(key);
+        arrraP[key-1]=value;
+    }
+
+    arrraP.forEach(element => {
+        addItem(element);
+    });
+    
+    
+
+
+
+
+
+
+    //if(this.localStorage.getItem("productData")!=null){
+       // nuevoArray = JSON.parse(this.localStorage.getItem("productData"));
+        //arregloProductos.push(productData);
+       //this.localStorage.setItem("productArray",JSON.stringify(arregloProductos));
+       //addItem(productData);
+       //this.localStorage.removeItem("productData");
        
-        let nuevoArray= JSON.parse(this.localStorage.getItem("productArray"));
-       window.alert("SE REGISTRO EL PRODUCTO CON  ENVIADO SUS DATOS CON ÉXITO"); 
+       // let nuevoArray= JSON.parse(this.localStorage.getItem("productArray"));
+      // window.alert("SE REGISTRO EL PRODUCTO CORRECTAMENTE);  ENVIADO SUS DATOS CON ÉXITO"); 
     //alertMensaje.innerHTML=`Hola, <strong>${this.localStorage.getItem("nombre")} </strong>, bienvenido/a de nuevo`;
-    }//if nombre!=null
+    //}//if nombre!=null
 
     //alertMensaje.style.display="block"; //Para que se muestre, si esto solo agregas al div pero no lo muestra
 
 //});//load
 
-for(let i=0; i<nuevoArray.length;i++){
-    addItem(nuevoArray[i])
-}
+//for(let i=0; i<nuevoArray.length;i++){
+    //addItem(nuevoArray[i])
+//}
