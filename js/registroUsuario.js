@@ -6,6 +6,7 @@ let user_confirm_password = document.getElementById("user_confirm_password");
 let confirm_checkbox = document.getElementById("flexCheckDefault");
 const feedback = document.getElementById('checkboxFeedback');
 let button_register = document.getElementById("button_register");
+let alert_container = document.getElementById("alert-container")
 
 
 // Bandera para validar
@@ -69,6 +70,7 @@ function showAlert(element, message) {
     // Evento click del botón
     button_register.addEventListener("click", function(event){
     event.preventDefault();
+    clearAlert(alert_container)
 
     User_name.style.border = "";
     user_email.style.border = "";
@@ -176,6 +178,20 @@ function showAlert(element, message) {
         user_password.value = "";
         user_confirm_password.value = "";
         confirm_checkbox.checked = false;
+
+        alert_container.insertAdjacentHTML("afterbegin",`
+        <div class".alert">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <div class="alert alert-success d-flex align-items-center" role="alert"  style="height: 100px;">
+        <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div style="font-size: 40px; text-align: center;">
+        ¡Su registro ha sido exitoso!
+        </div>
+        </div>
+            `)
     
     }
     
