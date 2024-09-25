@@ -2,7 +2,7 @@ let User_id = document.getElementById("User_id");
 let user_email = document.getElementById("user_email");
 let user_phoneNumber = document.getElementById("user_phoneNumber");
 let user_message = document.getElementById("user_message");
-
+let alert_container = document.getElementById("container_alert")
 let button_contactenos = document.getElementById("button_contactenos");
 
 // Bandera para validar
@@ -14,7 +14,7 @@ const formUrl = 'https://formspree.io/f/meojdblr';
 // Función para validar número telefónico
 function valPhone() {
     const phoneValid = user_phoneNumber.value.trim();
-    const phoneRegex = /^\d{10,15}$/;
+    const phoneRegex = /^(?!0000000000)\d{10}$/;
     return phoneRegex.test(phoneValid); 
 }//valPhone
 
@@ -26,7 +26,7 @@ function valEmail(email) {
 
 // Función para eliminar alerta
 function clearAlert(element) {
-    const alert = element.parentNode.querySelector('.alert_user');
+    const alert = element.parentNode.querySelector('.alert');
     if (alert) {
         alert.remove(); 
     }
@@ -36,18 +36,17 @@ function clearAlert(element) {
 function showAlert(element, message) {
     clearAlert(element); 
     element.insertAdjacentHTML("afterend",`
-        <div class="alert_user alert-danger d-flex align-items-center" role="alert" style="display: block;">
-            <i class="bi bi-exclamation-triangle bi flex-shrink-0 me-2 " aria-label="Danger:"></i>
-            <div>
-                ${message}
-            </div>
-        </div>
-    `);
-}//clearAlert
+    <div class="alert alert-danger d-flex align-items-center" role="alert" style="display: block;">
+    <i class="bi bi-exclamation-triangle flex-shrink-0 me-2" aria-label="Danger:"></i>
+    ${message}
+    </div>
+    `);
+}
 
 // Evento click del botón de contacto
 button_contactenos.addEventListener("click", function(event){
     event.preventDefault();
+    clearAlert(alert_container);
     User_id.style.border = "";
     user_email.style.border = "";
     user_phoneNumber.style.border = "";
@@ -83,7 +82,11 @@ button_contactenos.addEventListener("click", function(event){
     }
 
     // Validación del mensaje
-    if (user_message.value.trim().length > 500) {
+    if (user_message.value.trim().length === 0) {
+        user_message.style.border = "solid red medium";
+        showAlert(user_message, `Por favor escribe algún mensaje`); 
+        is_valid = false;
+    }else if (user_message.value.trim().length > 500) {
         user_message.style.border = "solid red medium";
         showAlert(user_message, `El mensaje es muy extenso`); 
         is_valid = false;
@@ -93,7 +96,7 @@ button_contactenos.addEventListener("click", function(event){
 
     // Si los datos son válidos, enviar el formulario
     if (is_valid) {
-        // Datos a enviar
+        // Datos a enviars
         const formData = {
             nombre: User_id.value.trim(),
             correo: user_email.value.trim(),
@@ -123,10 +126,36 @@ button_contactenos.addEventListener("click", function(event){
             user_email.value = "";
             user_message.value = "";
             User_id.focus();
-            window.alert("SE HAN ENVIADO SUS DATOS CON ÉXITO"); 
+            alert_container.insertAdjacentHTML("afterbegin",`
+                <div class".alert">
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </symbol>
+                <div class="alert alert-success d-flex align-items-center" role="alert"  style="height: 100px;">
+                <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                <div style="font-size: 40px; text-align: center;">
+                ¡Se han enviado sus datos con éxito.!
+                </div>
+                </div>
+                </div>
+                    `);
         })
         .catch(error => {
-            window.alert('Error:', error);
+            alert_container.insertAdjacentHTML("afterbegin",`
+                <div class".alert">
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </symbol>
+                <div class="alert alert-danger d-flex align-items-center" role="alert" style="height: 100px;">
+                <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg><div>
+                Error ${error}
+                </div>
+                </div>
+                </div>
+                `);
+            
         });
     }
 });
