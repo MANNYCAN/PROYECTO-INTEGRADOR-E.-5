@@ -191,6 +191,7 @@ function showAlert(element, message) {
         ¡Su registro ha sido exitoso!
         </div>
         </div>
+        </div>
             `)
     
     }
