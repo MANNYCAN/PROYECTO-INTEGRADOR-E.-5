@@ -2,13 +2,19 @@ const productName = document.getElementById("productName");
 const productDescription = document.getElementById("productDescription");
 const productPrice = document.getElementById("productPrice");
 const button_publicar = document.getElementById("button_publicar");
-const imgId = document.getElementById("uploadedimage");
+const containerImg = document.getElementById("containerImg");
+const sucessAlert = document.getElementById("sucessAlert");
+//Constantes para src
+var imgId = document.getElementById("uploadedimage");
+//var srcImg = imgId.src;
+
+
 
 const cloudName = "dntc09dgq"; // replace with your own cloud name
 const uploadPreset = "preset_Team5"; // replace with your own upload preset
 
-const myWidget = cloudinary.createUploadWidget(
-    {
+//FUNCION CLOUDINARY
+const myWidget = cloudinary.createUploadWidget({
     cloudName: cloudName,
     uploadPreset: uploadPreset,
     },
@@ -29,22 +35,21 @@ const upload_widget =document.getElementById("upload_widget").addEventListener("
 );
 
 
-
 //Bandera
 let is_valid = true;
 let contaD=0;
 
 //Arreglo en donde vamos a guardar los elementos registrados
-let arrayProductos =[];
+//let arrayProductos =[];
 
 
 //Funcion para crear un id
 function generarIDUnico() {
     return Math.floor(Math.random() * 1000000);
 }
-// Función para eliminar alerta
+
 function clearAlert(element) {
-    const alert = element.parentNode.querySelector('.alert_user');
+    const alert = element.parentNode.querySelector('.alert');
     if (alert) {
         alert.remove(); 
     }
@@ -54,14 +59,12 @@ function clearAlert(element) {
 function showAlert(element, message) {
     clearAlert(element); 
     element.insertAdjacentHTML("afterend",`
-        <div class="alert_user alert-danger d-flex align-items-center" role="alert" style="display: block;">
-            <i class="bi bi-exclamation-triangle bi flex-shrink-0 me-2 " aria-label="Danger:"></i>
-            <div>
-                ${message}
-            </div>
-        </div>
+    <div class="alert alert-danger d-flex align-items-center" role="alert" style="display: block;">
+    <i class="bi bi-exclamation-triangle flex-shrink-0 me-2" aria-label="Danger:"></i>
+    ${message}
+    </div>
     `);
-}//showAlert
+}
 
 
 
@@ -72,6 +75,7 @@ button_publicar.addEventListener("click",function(event){
     productName.style.border = "";
     productPrice.style.border = "";
     productDescription.style.border = "";
+    clearAlert(sucessAlert);
 
     is_valid = true;
 
@@ -110,36 +114,60 @@ button_publicar.addEventListener("click",function(event){
     } else {
         clearAlert(productDescription);
     }
+    // Validar que la imagen esté cargada
+
+    let srcImg = imgId.src; // Aquí accedes al valor del src de la imagen cargada
+    console.log(srcImg);
+    
+    if (srcImg === "https://res-console.cloudinary.com/dntc09dgq/media_explorer_thumbnails/56fa97afe737c1301576f2d2ae1076df/detailed") {
+        showAlert(containerImg, `Favor de cargar imagen`); 
+        is_valid = false;
+    } else {
+        clearAlert(containerImg); // Limpiar alerta si el campo es válido
+    }//ifvalidimg
+    
 
     if(is_valid){
     // Crear objeto JSON con la información del formulario
+    imgId.remove();//aqui se remueve la imagen cuando se validan todos los campos
     id= generarIDUnico();
     contaD=contaD+1;
     const productData = {
-    name: productName.value,
-    img: 'https://m.media-amazon.com/images/I/31Dmajx-C3L._AC_SY580_.jpg',
-    description: productDescription.value,
-    price: parseInt(productPrice.value), // Convertir a número
-    modelo: id  //id que lo ocuparemos cuando querrámos eliminar un elemento
+        name: productName.value,
+        img: srcImg,
+        description: productDescription.value,
+        price: parseInt(productPrice.value), // Convertir a número
+        modelo: id  //id que lo ocuparemos cuando querrámos eliminar un elemento
     };
     //arrayProductos.push(productData)
     // Convertir el objeto a formato JSON
     const jsonProductData = JSON.stringify(productData);
-    arrayProductos.push(productData);
+    //arrayProductos.push(productData);
 
     // Guardar el objeto JSON en localStorage
     //localStorage.setItem(`${id}`, jsonProductData);
-    localStorage.setItem("holaa",JSON.stringify(arrayProductos));
+    //localStorage.setItem("holaa",JSON.stringify(arrayProductos));
     localStorage.setItem(`${localStorage.length}`,jsonProductData);
     productName.value = "";
     productDescription.value = "";
     productPrice.value = "";
     //productImage.value = "";
     productName.focus();
-    window.alert("SE REGISTRO EL PRODUCTO CORRECTAMENTE");
+    sucessAlert.insertAdjacentHTML("afterbegin",`
+        <div class".alert">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <div class="alert alert-success d-flex align-items-center" role="alert"  style="height: 100px;">
+        <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div style="font-size: 40px; text-align: center;">
+        Se publicó producto EXITOSAMENTE.
+        </div>
+        </div>
+        `);
 
     }
-    
 
 });
 
