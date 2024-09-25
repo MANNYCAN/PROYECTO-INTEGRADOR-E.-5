@@ -25,26 +25,32 @@
         <div class="team-section container">
             <h3 class="text-center">Registro de usuario</h3>
             <form id="productForm">
-
-                <label for="userName" class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" id="userName" placeholder="Nombre completo">
+                <div>
+                    <label for="User_name" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="User_name" placeholder="Nombre completo">
+                </div>
                 <br>
-
-                <label for="userNumber" class="form-label">Número telefónico</label>
-                <input type="number" class="form-control" id="userNumber" placeholder="Número telefónico">
+                <div>
+                    <label for="user_phoneNumber" class="form-label">Número telefónico</label>
+                    <input type="tel" class="form-control" id="user_phoneNumber" placeholder="Número telefónico">
+                </div>
                 <br>
-
-                <label for="userEmail" class="form-label">Correo eletrónico</label>
-                <input type="text" class="form-control" id="userEmail" placeholder="Correo eletrónico">
+                <div>
+                    <label for="user_email" class="form-label">Correo eletrónico</label>
+                    <input type="text" class="form-control" id="user_email" placeholder="Correo eletrónico">
+                </div>
                 <br>
-
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                <div>
+                    <label for="user_password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="user_password" placeholder="Contraseña">
+                </div>
                 <br>
-
-                <label for="passwordConfirmation" class="form-label">Confirmacion de contraseña</label>
-                <input type="password" class="form-control" id="passwordConfirmation"
-                    placeholder="Confirmacion de contraseña">
+                <div>
+                    <label for="user_confirm_password" class="form-label">Confirmacion de contraseña</label>
+                    <input type="password" class="form-control" id="user_confirm_password"
+                        placeholder="Confirmacion de contraseña">
+                </div>
+                
                 <br>
 
                 <div class="form-check">
@@ -53,10 +59,11 @@
                         Aceptar términos y condiciones
                     </label>
                 </div>
+                <div class="invalid-feedback" id="checkboxFeedback">Debes aceptar los términos y condiciones.</div>
                 <br>
 
                 <button class="btn btn-primary botones mx-auto d-flex justify-content-center" type="submit"
-                    id="button_registrarse">Registrarse</button>
+                    id="button_register">Registrarse</button>
 
             </form>
         </div>
@@ -68,7 +75,7 @@
     <footer id="footer-placeholder"></footer>
 
 
-
+    <script src="js/registroUsuario.js"></script>
     <script src="./js/archivo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
