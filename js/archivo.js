@@ -1,6 +1,6 @@
 const footer_placeholder = document.getElementById("footer-placeholder")
 const navBar = document.getElementById("navBar")
-const carouselExampleCaptions = document.getElementById("carouselExampleCaptions")
+
 
 function loadFooter() {
     footer_placeholder.insertAdjacentHTML("afterbegin",
@@ -105,49 +105,9 @@ function loadNavbar() {
     `)
 }
 
-function loadCarousel() {
-    carouselExampleCaptions.insertAdjacentHTML("afterbegin",`
-        <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://m.media-amazon.com/images/I/B1mEhjGJ2nL._CLa%7C2140%2C2000%7CB1DbPA8tJ5L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" class="rounded mx-auto d-block img_carrusel" alt="Primer artículo de novedad">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://down-mx.img.susercontent.com/file/2795ac229047aa8806fd15bce994a83a" class="rounded mx-auto d-block img_carrusel" alt="Segundo artículo de novedad">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://resources.sears.com.mx/medios-plazavip/t1/171406873202jpg?scale=500&qlty=75" class="rounded mx-auto d-block img_carrusel" alt="Tercer artículo de novedad">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-        `)
-}
+
 
 loadNavbar()
 
 loadFooter();
 
-loadCarousel()
