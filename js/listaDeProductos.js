@@ -115,7 +115,7 @@ let arrraP= [];
         let key = this.localStorage.key(i);
         const value = JSON.parse(this.localStorage.getItem(key));
         key=Number(key);
-        arrraP[key-1]=value;
+        arrraP[key]=value;
     }
 
     arrraP.forEach(element => {

@@ -49,12 +49,20 @@ h1{
 /*h2 */
 h2{
     font-size: 56px;
+    text-align: center;
 }
 
 /*h3 */
 h3{
     font-size: 36px;
 }
+
+    
+    @media (max-width: 420px) {
+        .responsiveH2{
+            font-size: 26px; 
+        }
+    }/* responsih2 */
 
 /* Estilo para el título "Acerca de Nosotros" */
 .acerca-titulo {
@@ -145,6 +153,28 @@ h3{
         border: #49761a 3px solid;
     }
     /* Ajustas en FIGMA dimensiones de foto */
+
+    .imgSrc {
+        border-radius: 20px;
+    } /* bore de imagen de carg en agregar producto */
+    
+    #upload_widget{
+        background-color: #49761a;
+        border-color: #92af5a;
+        color: #E5EBD2;
+        font-family: "Public Sans", sans-serif;
+    }/* boton de carga imagen cloudinary */
+    #upload_widget:hover{
+        background-color: #92af5a;
+        border-color: #4a741a;
+    }/* hover de boton cloudinary */
+
+    @media (max-width: 420px) {
+        .imgSrc{
+            max-width: 150px;
+            max-height: 150px; 
+        }
+    }/* responsih2 */
     
     .card, .mb-3{
         margin: 10px 10px;
@@ -181,7 +211,7 @@ h3{
         margin-bottom: 20px;
     }
 
-    .botones, .cloudinary-button{
+    .botones{
         background-color: #4a741a;
         border-color: #4a741a;
         font-family: "Public Sans", sans-serif;
