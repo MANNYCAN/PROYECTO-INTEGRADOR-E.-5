@@ -103,7 +103,7 @@ button_publicar.addEventListener("click",function(event){
     }
 
      // Validación de la descripción
-     if (productDescription.value.trim().length > 15 ) {
+     if (productDescription.value.trim().length > 70 ) {
         productDescription.style.border = "solid red medium";
         showAlert(productDescription, `La descripción es muy larga`); 
         is_valid = false;
