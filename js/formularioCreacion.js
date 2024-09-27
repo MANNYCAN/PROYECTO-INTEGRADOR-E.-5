@@ -24,6 +24,7 @@ const myWidget = cloudinary.createUploadWidget({
         document
         .getElementById("uploadedimage")
         .setAttribute("src", result.info.secure_url);
+        imgId.style.display = "inline-block";
         }
     }
 );
@@ -75,8 +76,6 @@ button_publicar.addEventListener("click",function(event){
     productName.style.border = "";
     productPrice.style.border = "";
     productDescription.style.border = "";
-    clearAlert(sucessAlert);
-
     is_valid = true;
 
      // Validación del nombre del producto
@@ -129,7 +128,9 @@ button_publicar.addEventListener("click",function(event){
 
     if(is_valid){
     // Crear objeto JSON con la información del formulario
-    imgId.remove();//aqui se remueve la imagen cuando se validan todos los campos
+    //imgId.style.display = "inline-block";
+    imgId.remove();
+    //aqui se remueve la imagen cuando se validan todos los campos
     id= generarIDUnico();
     contaD=contaD+1;
     const productData = {
@@ -170,10 +171,8 @@ button_publicar.addEventListener("click",function(event){
     }
 
 });
-
 /*  
-   
-  
+
     localStorage.setItem("holaa",JSON.stringify(arrayProductos)); */
 
 //EN ESTA PARTE PONDRÉ EL CLOUDING

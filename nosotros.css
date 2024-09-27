@@ -67,17 +67,53 @@ h3{
 /* Estilo para el título "Acerca de Nosotros" */
 .acerca-titulo {
     text-align: center;
-    font-weight: 550;
-    color: #11220b; /* Verde oscuro para el título principal */
+    font-size: 56PX;
+    color: #e5ebd2; /* Verde oscuro para el título principal */
     }
+
+
 
 /* Estilo para el rectángulo de color */
 .team-section {
     background-color: #404866; /* Rectángulo con fondo verde grisáceo */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 16px;
+    border-top-right-radius: 120px;
+    border-end-start-radius: 120px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: #e5ebd2; /* Texto dentro del rectángulo en color claro */
+}
+
+.team-sections {
+    background-color: #404866; /* Rectángulo con fondo verde grisáceo */
+    padding: 20px;
+    border-radius: 16px;
     margin-top: 20px;
     color: #e5ebd2; /* Texto dentro del rectángulo en color claro */
+}
+
+.mision-image {
+    max-width: 20%; /* La imagen no excederá el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0px 20px 20px 20px;
+}
+
+.mision-content {
+    display: flex; /* Utiliza flexbox para alinear imagen y texto */
+    align-items: center; /* Centra verticalmente */
+}
+
+@media (max-width: 420px) {
+    .rounded-start{
+        max-width: 150px;
+        max-height: 150px; 
+    }
+}/* responsih2 */
+
+p{
+    text-align: justify;
 }
 
 /* Título más pequeño dentro del rectángulo */
@@ -93,7 +129,7 @@ h3{
     height: auto;
     max-width: 100%;
     margin: 10px auto;
-    border: 3px solid #92af5a; /* Borde de imagen en verde claro */
+    border: 3px solid #e5ebd2; /* Borde de imagen en verde claro */
     }
 
 
@@ -150,8 +186,9 @@ h3{
         height: 220px;
         margin: 12px auto;
         border-radius: 30px;
-        border: #49761a 3px solid;
     }
+
+    
     /* Ajustas en FIGMA dimensiones de foto */
 
     .imgSrc {
@@ -184,6 +221,8 @@ h3{
     }
     .card:hover{
         transform: scale(1.1);
+        background-color: #92af5a;
+        border: #49761a 1px double;
     }
     
     .icon-links{
