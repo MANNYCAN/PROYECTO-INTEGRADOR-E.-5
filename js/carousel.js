@@ -3,30 +3,29 @@ const carouselExampleCaptions = document.getElementById("carouselExampleCaptions
 function loadCarousel() {
     carouselExampleCaptions.insertAdjacentHTML("afterbegin",`
         <div class="carousel-indicators">
+        
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="./assets/carousel 5.jpg" class="rounded mx-auto d-block img_carrusel" alt="Primer artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Novedades de la semana</h5>
-        <p>¡Conoce nuestros productos estrella!</p>
+
       </div>
     </div>
     <div class="carousel-item">
       <img src="./assets/carousel 2.jpg" class="rounded mx-auto d-block img_carrusel" alt="Segundo artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Novedades de la semana</h5>
-        <p>¡Conoce nuestros productos estrella!</p>
+
       </div>
     </div>
     <div class="carousel-item">
       <img src="./assets/carousel 4.jpg" class="rounded mx-auto d-block img_carrusel" alt="Tercer artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Novedades de la semana</h5>
-        <p>¡Conoce nuestros productos estrella!</p>
+
       </div>
     </div>
   </div>
