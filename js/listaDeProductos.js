@@ -67,9 +67,9 @@ addItem({
     'price': 250
 })
 addItem({
-    'name': 'Suetér térmico',
+    'name': 'Suéter térmico',
     'img': './assets/sud 2.jpg',
-    'description': 'Suetér térmico para soportar temperaturas frías - Negro',
+    'description': 'Suéter térmico para soportar temperaturas frías - Negro',
     'price': 300
 });
 
