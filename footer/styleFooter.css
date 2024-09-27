@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-<<<<<<< HEAD
-
-
 
 footer{
->>>>>>> 89fa3f2 (se agregan cambios en línea de carácteres e import)
+
     background-color: #404866;
     text-align: center;
     padding-top: 16px; 
@@ -41,10 +38,7 @@ footer{
     width: 24px;
     height: 24px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 89fa3f2 (se agregan cambios en línea de carácteres e import)
 
 @media (max-width: 430px) and (min-width: 140px) {
     footer {
