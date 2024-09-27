@@ -61,6 +61,8 @@ footer {
     }
 
     #button_producto {
-        font-size: 16px; /* Tamaño aún más pequeño para pantallas pequeñas */
+        font-size: 0.6rem; /* Tamaño aún más pequeño para pantallas pequeñas */
+        padding-left: 8px;
+        padding-right: 8px;
     }
 }
