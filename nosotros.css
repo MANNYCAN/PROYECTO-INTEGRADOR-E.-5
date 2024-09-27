@@ -67,8 +67,7 @@ h3{
 /* Estilo para el título "Acerca de Nosotros" */
 .acerca-titulo {
     text-align: center;
-    font-size: 56PX;
-    color: #e5ebd2; /* Verde oscuro para el título principal */
+    /* color: #11220b; Verde oscuro para el título principal */
     }
 
 
@@ -112,7 +111,7 @@ h3{
     }
 }/* responsih2 */
 
-p{
+.justText{
     text-align: justify;
 }
 
@@ -321,11 +320,8 @@ p{
       
     }
 
-    .index{
-        
-            
-            height: auto;
-            
+    .index{   
+            height: auto;   
             border-radius: 30px;
             border: none 
     }
@@ -337,14 +333,17 @@ p{
 
 
     @media (max-width: 700px) {
-        .team-section {
+        .team-sections{
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
         }
-      
-        .team-section .col {
+        .index{
+            margin: 12px;
+        }
+
+        .team-sections .col {
           flex: 0 0 100%;
           max-width: 100%;
           display: flex;
@@ -352,11 +351,12 @@ p{
           margin-bottom: 15px;
         }
       
-        .team-section .row {
+        .team-sections .row {
           justify-content: center;
+          margin: 12px;
         }
       
-        .team-section img {
+        .team-sections img {
           max-width: 100%;
           height: auto;
           margin: 20px;
