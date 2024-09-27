@@ -14,7 +14,7 @@ const formUrl = 'https://formspree.io/f/meojdblr';
 // Función para validar número telefónico
 function valPhone() {
     const phoneValid = user_phoneNumber.value.trim();
-    const phoneRegex = /^(?!0000000000)\d{10}$/;
+    const phoneRegex = /^(?!0\d{9})\d{10}$/;
     return phoneRegex.test(phoneValid); 
 }//valPhone
 

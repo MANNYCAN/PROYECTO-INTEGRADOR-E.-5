@@ -23,7 +23,7 @@ function valname() {
 // Función para validar número telefónico
 function valPhone() {
     const phoneValid = user_phoneNumber.value.trim();
-    const phoneRegex = /^(?!0000000000)\d{10}$/;
+    const phoneRegex = /^(?!0\d{9})\d{10}$/;
     return phoneRegex.test(phoneValid); 
 }//valPhone
 
@@ -134,7 +134,7 @@ function showAlert(element, message) {
      // Validación de contraseña
      if (!valPassword()) {
         user_password.style.border = "solid red medium";
-        showAlert(user_password, `Contraseña inválida`); 
+        showAlert(user_password, `Contraseña inválida. Mínimo 8 caracteres, al menos 1 caracter especial, 1 mayúscula, 1 minúscula y 1 número`); 
         is_valid = false;
     }else{
         clearAlert(user_password);
