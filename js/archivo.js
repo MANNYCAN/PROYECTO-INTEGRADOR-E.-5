@@ -33,7 +33,7 @@ function loadFooter() {
     const currentPage = window.location.pathname;
     const botonProducto = document.getElementById("button_producto");
 
-    if (currentPage !== "../listaDeProductos.html") {
+    if (currentPage !== "/listaDeProductos.html" && currentPage !== "/listaDeProductos.html" ) {
         botonProducto.style.display = "none";
     }
 }
@@ -74,7 +74,7 @@ function loadNavbar() {
             <div class="container-fluid" style="background-color: #404866">
                 <div id="header" class="container-fluid">
                     <header>
-                        <a href="./index.html"><img id="logo" style="max-width: 300px;" src="../assets/Genereishop1.png" alt=""></a>
+                        <a href="./index.html"><img id="logo" style="max-width: 300px;" src="./assets/Genereishop1.png" alt=""></a>
                     </header>
                 </div>
                 <a class="navbar-toggler" href="./index.html">
