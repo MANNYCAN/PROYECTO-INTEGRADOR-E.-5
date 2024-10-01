@@ -61,7 +61,7 @@ button_login.addEventListener("click", function(event){
     if(!array.includes(user_email.value.trim())){
         //user_password.style.border = "solid red medium";
         user_email.style.border = "solid red medium";
-        showAlert(user_email, `El correo no coincide`); 
+        showAlert(user_email, `Usuario no encontrado`); 
         user_password.value = "";
     }
 
