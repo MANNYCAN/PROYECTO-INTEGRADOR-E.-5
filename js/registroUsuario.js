@@ -15,7 +15,7 @@ let is_valid = true;
 // Función para validar nombre
 function valname() {
     const validName = User_name.value.trim();
-    const nameVal = /^([A-Za-záéíóúüñÑ]{3,} ){0,1}[A-Za-záéíóúüñÑ]{3,} [A-Za-záéíóúüñÑ]{2,}([ ]?[A-Za-záéíóúüñÑ]{2,})?$/;
+    const nameVal = /^([A-Za-záéíóúüñÑÁÉÍÓÚÜ]{3,} ){0,1}[A-Za-záéíóúüñÑÁÉÍÓÚÜ]{3,} [A-Za-záéíóúüñÑÁÉÍÓÚÜ]{2,}([ ]?[A-Za-záéíóúüñÑÁÉÍÓÚÜÁÉÍÓÚÜ]{2,})?$/;
     return nameVal.test(validName);
 }//valname
 

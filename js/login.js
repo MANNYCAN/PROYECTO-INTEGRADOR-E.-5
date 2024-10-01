@@ -97,10 +97,14 @@ if(is_valid){
                     `)
                 //alert_container.scrollIntoView({ behavior: "smooth", block: "start" });
             //Limpiar los campos
+            localStorage.setItem('sesion_activa', JSON.stringify({
+            email: user_email.value.trim(),
+            name: (JSON.parse(localStorage.getItem(user_email.value.trim()))).nombre,
+            timestamp: Date.now()}));
             user_email.value = "";
             user_password.value = "";
             setInterval(function() {  //Cambiar de página después de un tiempo
-                window.location.href ="../index.html";
+            window.location.href ="../index.html";
             },2000);
         }//if
     }//for
