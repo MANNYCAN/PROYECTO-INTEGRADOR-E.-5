@@ -58,20 +58,21 @@ button_login.addEventListener("click", function(event){
         let key = localStorage.key(i);
         array.push(key)
     }
+
+    
     if(!array.includes(user_email.value.trim())){
         //user_password.style.border = "solid red medium";
         user_email.style.border = "solid red medium";
         showAlert(user_email, `Usuario no encontrado`); 
         user_password.value = "";
-    }
-
-    //
-    let contS=(JSON.parse(localStorage.getItem(user_email.value.trim()))).contraseña
-    if(!(user_password.value.trim()===contS)){
-        user_password.style.border = "solid red medium";
-        //user_email.style.border = "solid red medium";
-        showAlert(user_password, `La contraseña no coincide`); 
-    }
+    } else { let contS=(JSON.parse(localStorage.getItem(user_email.value.trim()))).contraseña
+        if(!(user_password.value.trim()===contS)){
+            user_password.style.border = "solid red medium";
+            //user_email.style.border = "solid red medium";
+            showAlert(user_password, `La contraseña no coincide`); 
+        }
+    }//else
+    
    
 
 if(is_valid){
