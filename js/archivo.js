@@ -80,7 +80,7 @@ function loadNavbar() {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-0" href="./registroUsuarios.html">
+                    <a class="nav-link p-0" href="./login.html"> 
                         <i class="bi bi-person fs-1 fs-sm-3"></i> <!-- icono de Perfil -->
                     </a>
                 </li>

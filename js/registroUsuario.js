@@ -193,6 +193,9 @@ function showAlert(element, message) {
         </div>
         </div>
             `)
+        setInterval(function() {  //Cambiar a una página después de un cierto tiempo 
+                window.location.href ="../login.html"; 
+            },2000);
     
     }
     
