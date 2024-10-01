@@ -33,7 +33,7 @@ function loadFooter() {
     const currentPage = window.location.pathname;
     const botonProducto = document.getElementById("button_producto");
 
-    if (currentPage !== "/listaDeProductos.html") {
+    if (currentPage !== "../listaDeProductos.html") {
         botonProducto.style.display = "none";
     }
 }
