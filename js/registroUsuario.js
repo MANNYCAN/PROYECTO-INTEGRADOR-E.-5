@@ -86,7 +86,7 @@ function showAlert(element, message) {
     // Validación del nombre
     if(!valname()){
         User_name.style.border = "solid red medium"
-        showAlert(User_name, `El nombre de usuario no es válido`); 
+        showAlert(User_name, `El nombre debe tener al menos 3 letras y puede incluir hasta dos apellidos.`); 
         is_valid = false;
     } else {
         clearAlert(User_name); // Limpiar alerta si el campo es válido
@@ -101,11 +101,11 @@ function showAlert(element, message) {
     // Validación del correo electrónico
     if (!valEmail()) {
         user_email.style.border = "solid red medium";
-        showAlert(user_email, `El correo no es válido`); 
+        showAlert(user_email, `El correo electrónico debe tener un formato válido (e.g., ejemplo@dominio.com).`); 
         is_valid = false;
     } else if (array.includes(user_email.value.trim())) {
         user_email.style.border = "solid red medium";
-        showAlert(user_email, `El correo ya existe`); 
+        showAlert(user_email, `El correo ya existe.`); 
         is_valid = false;
     } else {
         clearAlert(user_email); // Limpiar alerta si el campo es válido
@@ -125,7 +125,7 @@ function showAlert(element, message) {
      // Validación del teléfono
      if (!valPhone()) {
         user_phoneNumber.style.border = "solid red medium";
-        showAlert(user_phoneNumber, `El número no es válido`); 
+        showAlert(user_phoneNumber,`El número de teléfono debe tener un formato válido (e.g., 55XXXXXXXX).`); 
         is_valid = false;
     } else {
         clearAlert(user_phoneNumber); // Limpiar alerta si el campo es válido
@@ -134,18 +134,18 @@ function showAlert(element, message) {
      // Validación de contraseña
      if (!valPassword()) {
         user_password.style.border = "solid red medium";
-        showAlert(user_password, `Contraseña inválida. Mínimo 8 caracteres, al menos 1 caracter especial, 1 mayúscula, 1 minúscula y 1 número`); 
+        showAlert(user_password, `Contraseña inválida. Mínimo 8 caracteres, al menos 1 caracter especial, 1 mayúscula, 1 minúscula y 1 número.`); 
         is_valid = false;
     }else{
         clearAlert(user_password);
     }
     if (user_confirm_password.value.trim()==="") {
         user_confirm_password.style.border = "solid red medium";
-        showAlert(user_confirm_password, `Campo vacio`); 
+        showAlert(user_confirm_password, `Campo vacio.`); 
         is_valid = false;     
     } else if (user_password.value.trim() != user_confirm_password.value.trim()){
         user_confirm_password.style.border = "solid red medium";
-        showAlert(user_confirm_password, `La contraseña no coincide`); 
+        showAlert(user_confirm_password, `La contraseña no coincide.`); 
         is_valid = false;     
     }else{
         clearAlert(user_confirm_password);
@@ -185,9 +185,10 @@ function showAlert(element, message) {
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
         </symbol>
-        <div class="alert alert-success d-flex align-items-center" role="alert"  style="height: 100px;">
+        </svg>
+        <div class="alert alert-success d-flex justify-content-center align-items-center text-center" role="alert" style="height: 100px; background-color: #d4edda !important; color: #155724;">
         <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-        <div style="font-size: 40px; text-align: center;">
+        <div style="font-size: 40px;">
         ¡Su registro ha sido exitoso!
         </div>
         </div>

@@ -81,7 +81,7 @@ button_publicar.addEventListener("click",function(event){
      // Validación del nombre del producto
      if(productName.value.trim().length < 3){
         productName.style.border = "solid red medium";
-        showAlert(productName, `El nombre del producto no es válido`); 
+        showAlert(productName, `El nombre del producto debe tener al menos 3 caracteres.`); 
         is_valid = false;
     } else {
         clearAlert(productName); // Limpiar alerta si el campo es válido
@@ -91,11 +91,11 @@ button_publicar.addEventListener("click",function(event){
     let precio=Number(productPrice.value);
     if(precio==0 || precio<0){
         productPrice.style.border = "solid red medium";
-        showAlert(productPrice, `El precio del producto no es válido`); 
+        showAlert(productPrice, `El precio debe ser mayor a 0.`); 
         is_valid = false;
     }else if(isNaN(productPrice.value)){
         productPrice.style.border = "solid red medium";
-        showAlert(productPrice, `No se admiten letras, ingrese un número`); 
+        showAlert(productPrice, `El precio debe ser un número válido, no se admiten letras.`); 
         is_valid = false;
     }else{
         clearAlert(productPrice); // Limpiar alerta si el campo es válido
@@ -108,7 +108,7 @@ button_publicar.addEventListener("click",function(event){
         is_valid = false;
     } else if(productDescription.value.trim().length==0){
         productDescription.style.border = "solid red medium";
-        showAlert(productDescription, `Agregue una descripción`); 
+        showAlert(productDescription, `Por favor, agregue una descripción del producto.`); 
         is_valid = false;
     } else {
         clearAlert(productDescription);
@@ -160,10 +160,14 @@ button_publicar.addEventListener("click",function(event){
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
         </symbol>
-        <div class="alert alert-success d-flex align-items-center" role="alert"  style="height: 100px;">
-        <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-        <div style="font-size: 40px; text-align: center;">
-        Se publicó producto EXITOSAMENTE.
+        </svg>
+        <div class="alert alert-success d-flex justify-content-center align-items-center text-center" role="alert" style="height: 100px; background-color: #d4edda !important; color: #155724;">
+        <svg class="bi flex-shrink-0 me-2" width="40" height="40" role="img" aria-label="Success:">
+        <use xlink:href="#check-circle-fill"/>
+        </svg>
+        <div style="font-size: 40px;">
+        ¡Se publicó el producto EXITOSAMENTE!
+        </div>
         </div>
         </div>
         `);

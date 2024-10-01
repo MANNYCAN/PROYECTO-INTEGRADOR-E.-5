@@ -2,37 +2,41 @@ const footer_placeholder = document.getElementById("footer-placeholder")
 const navBar = document.getElementById("navBar")
 
 
+
+
 function loadFooter() {
     footer_placeholder.insertAdjacentHTML("afterbegin",
         `
         <div class="container">
         
         <div class="container row-cols-4 text-center">
-    <a class="btn btn-primary botones"  href="./formularioCreacion.html" role="button" id="button_producto">Agregar producto</a>
-    </div>
+            <a class="btn btn-primary botones" href="./formularioCreacion.html" role="button" id="button_producto">Agregar producto</a>
+        </div>
             <h3 id="redesFooter">Redes sociales</h3>
             <div class="containerFooter">
                 <a href="https://www.facebook.com/profile.php?id=61566471330792" class="iconsFooter">
                     <i class="bi bi-facebook"></i>
                 </a>
-
                 <a href="https://www.instagram.com/genereishoptienda/" class="iconsFooter">
                     <i class="bi bi-instagram"></i>
                 </a>
-
                 <a href="https://x.com/home" class="iconsFooter">
                     <i class="bi bi-twitter-x"></i>
                 </a>
-                
                 <a href="https://www.tiktok.com/@genereishop" class="iconsFooter">
                     <i class="bi bi-tiktok"></i>
                 </a>
             </div>
             <i class="bi bi-c-circle" id="derechosFooter"> 2024 Genereishop. Todos los derechos reservados. </i> 
         </div>
-    `)
-}
+    `);
+    const currentPage = window.location.pathname;
+    const botonProducto = document.getElementById("button_producto");
 
+    if (currentPage !== "/listaDeProductos.html") {
+        botonProducto.style.display = "none";
+    }
+}
 function loadNavbar() {
    navBar.insertAdjacentHTML("afterbegin", `
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
