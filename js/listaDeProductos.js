@@ -1,4 +1,5 @@
 let productCard = document.getElementById("productCard");
+const BotonFiltro=document.getElementById("BotonFiltro");
 
 //let arregloProductos= [];
 
@@ -19,7 +20,7 @@ function addItem(item) {
         return estrellasHTML
     }
 
-    const itemHTML = `     
+    const itemHTML = ` 
     <br>
     <div class="card" style="width: 18rem; display: flex; flex-direction: column; justify-content: space-between; align-items: center;  margin: 40px auto;">
   <div style="width: 100%; display: flex; justify-content: center;">
@@ -33,7 +34,8 @@ function addItem(item) {
     <div class="card-text descripcion">$ ${item.price} MXN ${mostrarEstrellas(generarCalificacion())}</div>
   </div>
   <a href="#" class="btnCard" style="margin: 10px auto;">Agregar a Carrito</a>    
-</div>`  //Agregar después la referencia a la página del articulo individual
+</div>
+`  //Agregar después la referencia a la página del articulo individual
     
 
     productCard.insertAdjacentHTML("beforeend", itemHTML);
@@ -137,6 +139,26 @@ let arrraP= [];
     
     
     
+    /////// AQUI EMPIEZO A ESCIRBIR EL CODIGO PARA IMPLEMENTAR EL FILTRADO 
+
+    BotonFiltro.addEventListener("click", function(event){
+        event.preventDefault();
+        
+        while (productCard.firstChild) {
+            productCard.removeChild(productCard.firstChild);
+          }
+
+
+
+    });
+
+
+
+
+
+
+
+
 
 
 
