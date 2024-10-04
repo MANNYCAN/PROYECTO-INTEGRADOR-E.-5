@@ -70,6 +70,26 @@ h3{
     /* color: #11220b; Verde oscuro para el título principal */
     }
 
+/**
+Haciendo responsivos los botones de busqueda
+*/
+@media (max-width: 450px) {
+        #prendaBusca{
+            display: block; 
+            width: 600px; 
+        }
+        #BotonFiltro{
+        display: block; 
+        width: 100%;
+        margin-bottom: 30px; 
+        margin-top: 30px;
+        
+        }
+        #BotonTodo{
+            display: block; 
+            width: 100%; 
+        }
+    }
 
 
 /* Estilo para el rectángulo de color */

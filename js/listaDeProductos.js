@@ -1,5 +1,7 @@
 let productCard = document.getElementById("productCard");
 const BotonFiltro=document.getElementById("BotonFiltro");
+const prendaBusca = document.getElementById("prendaBusca");
+const BotonTodo=document.getElementById("BotonTodo");
 
 let arregloProductos= [];
 
@@ -39,6 +41,7 @@ function addItem(item) {
     
 
     productCard.insertAdjacentHTML("beforeend", itemHTML);
+    
 }
 
 addItem({
@@ -48,71 +51,153 @@ addItem({
     price: 100,
 
 });
+arregloProductos.push({
+    name: "Calcetas",
+    img: './assets/calcetas 1.jpg',
+    description: "Calcetas transpirables - Gris",
+    price: 100,
 
+});
 addItem({
     'name': 'Short',
     'img': './assets/short 1.jpg',
     'description': 'Short diseñado para correr - Gris',
     'price': 250
 })
-
+arregloProductos.push(
+    {
+        name: 'Short',
+        img: './assets/short 1.jpg',
+        description: 'Short diseñado para correr - Gris',
+        price: 250
+    }
+)
 addItem({
     'name': 'Blusa',
     'img': './assets/sud 5.jpg',
     'description': 'Blusa diseñada para ejercicios de yoga - Negro',
     'price': 300
 });
+arregloProductos.push(
+    {
+        name: 'Blusa',
+        img: './assets/sud 5.jpg',
+        description: 'Blusa diseñada para ejercicios de yoga - Negro',
+        price: 300
+    }
+)
 addItem({
     'name': 'Sudadera para mujer',
     'img': './assets/sud 1.jpg',
     'description': 'Sudadera deportiva para toda ocasión - Verde',
     'price': 250
 })
+arregloProductos.push(
+    {
+        'name': 'Sudadera para mujer',
+        'img': './assets/sud 1.jpg',
+        'description': 'Sudadera deportiva para toda ocasión - Verde',
+        'price': 250
+    }
+)
 addItem({
     'name': 'Suéter térmico',
     'img': './assets/sud 2.jpg',
     'description': 'Suéter térmico para soportar temperaturas frías - Negro',
     'price': 300
 });
-
+arregloProductos.push(
+    {
+        'name': 'Suéter térmico',
+        'img': './assets/sud 2.jpg',
+        'description': 'Suéter térmico para soportar temperaturas frías - Negro',
+        'price': 300
+    }
+)
 addItem({
     'name': 'Sudadera Azul',
     'img': './assets/sud 3.jpg',
     'description': 'Sudadera casual deportiva para correr - Azul Marino',
     'price': 350
 })
+arregloProductos.push(
+    {
+        'name': 'Sudadera Azul',
+        'img': './assets/sud 3.jpg',
+        'description': 'Sudadera casual deportiva para correr - Azul Marino',
+        'price': 350
+    }
+)
 addItem({
     'name': 'Camisa sin tirantes',
     'img': './assets/sud 4.jpg',
     'description': 'Camisa sin tirantes transpirable - Negro/Verde',
     'price': 200
 })
+arregloProductos.push(
+    {
+        'name': 'Camisa sin tirantes',
+        'img': './assets/sud 4.jpg',
+        'description': 'Camisa sin tirantes transpirable - Negro/Verde',
+        'price': 200
+    }
+)
 addItem({
     'name': 'Top diseñado para correr',
     'img': './assets/top 2.jpg',
     'description': 'Top para mujer - Negro',
     'price': 150
 });
-
+arregloProductos.push(
+    {
+        'name': 'Top diseñado para correr',
+        'img': './assets/top 2.jpg',
+        'description': 'Top para mujer - Negro',
+        'price': 150
+    }
+)
 addItem({
     'name': 'Top elástico',
     'img': './assets/top 1.jpg',
     'description': 'Top para mujer - Negro',
     'price': 150
 })
+arregloProductos.push(
+    {
+        'name': 'Top elástico',
+        'img': './assets/top 1.jpg',
+        'description': 'Top para mujer - Negro',
+        'price': 150
+    }
+)
 addItem({
     'name': 'Gorro para invierno',
     'img': './assets/gorra 1.jpg',
     'description': 'Gorro para correr diseñado para frías temperaturas- Verde militar',
     'price': 150
-    
-})
+});
+arregloProductos.push(
+    {
+        'name': 'Gorro para invierno',
+        'img': './assets/gorra 1.jpg',
+        'description': 'Gorro para correr diseñado para frías temperaturas- Verde militar',
+        'price': 150
+    }
+)
 addItem({
     'name': 'Gorra para correr',
     'img': './assets/gorra 2.jpg',
     'description': 'Gorra diseñada para correr  grandes distancias - Rosa',
     'price': 150
 })
+arregloProductos.push(
+    {
+        'name': 'Gorra para correr',
+        'img': './assets/gorra 2.jpg',
+        'description': 'Gorra diseñada para correr  grandes distancias - Rosa',
+        'price': 150
+    }
+)
 addItem({
     'name': 'Gorra deportiva',
     'img': './assets/gorra 4.jpg',
@@ -120,7 +205,13 @@ addItem({
     'price': 150
     
 })
-
+arregloProductos.push({
+    'name': 'Gorra deportiva',
+    'img': './assets/gorra 4.jpg',
+    'description': 'Gorra transpirable deportiva - Negra',
+    'price': 150
+    
+})
 
 
 //window.addEventListener("load", function(event){
@@ -131,28 +222,49 @@ let arrraP= [];
         const value = JSON.parse(this.localStorage.getItem(key));
         key=Number(key);
         arrraP[key]=value;
+       
+        
     }
 
     arrraP.forEach(element => {
         addItem(element);
     });
+
+
+    arrraP.forEach(element => {
+        if(element!==null){
+            arregloProductos.push(element)
+        }
+    });
     
     
     
     /////// AQUI EMPIEZO A ESCIRBIR EL CODIGO PARA IMPLEMENTAR EL FILTRADO 
+   
 
     BotonFiltro.addEventListener("click", function(event){
         event.preventDefault();
-        
+        if(prendaBusca.value!==""){
         while (productCard.firstChild) {
             productCard.removeChild(productCard.firstChild);
           }
           
-
-
+        const filtrado = (productos = [], texto) => {
+            return productos.filter(item => item.name.toLowerCase().trim().includes(texto.toLowerCase().trim()));
+        }  
+        const productosFiltrados = filtrado(arregloProductos, prendaBusca.value);
+        productosFiltrados.forEach(i => addItem(i));
+    }else{
+        window.alert("Escribe algo")
+    }
     });
 
-
+    BotonTodo.addEventListener("click",function(event){
+        event.preventDefault();
+        while (productCard.firstChild) {
+        productCard.removeChild(productCard.firstChild);}
+        arregloProductos.forEach(i => addItem(i));
+    });
 
 
 
