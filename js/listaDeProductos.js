@@ -21,7 +21,7 @@ function addItem(item) {
 
     const itemHTML = `     
     <br>
-    <div class="card" style="width: 18rem; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+    <div class="card" style="width: 18rem; display: flex; flex-direction: column; justify-content: space-between; align-items: center;  margin: 40px auto;">
   <div style="width: 100%; display: flex; justify-content: center;">
     <img src="${item.img}" class="card-img-top" alt="${item.name}" style="max-width: 100%; height: 300px; object-fit: cover;">
   </div>
