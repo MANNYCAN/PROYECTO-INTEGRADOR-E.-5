@@ -1,7 +1,7 @@
 let productCard = document.getElementById("productCard");
 const BotonFiltro=document.getElementById("BotonFiltro");
 
-//let arregloProductos= [];
+let arregloProductos= [];
 
 ////////////////////// Funcion de JC style="width: 18rem; height: 24rem;
 function addItem(item) {
@@ -147,7 +147,7 @@ let arrraP= [];
         while (productCard.firstChild) {
             productCard.removeChild(productCard.firstChild);
           }
-
+          
 
 
     });
