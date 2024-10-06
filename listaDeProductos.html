@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./footer/styleFooter.css">
     <link rel="stylesheet" href="./css/listadeProductos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregue esta libreria ya que se necesita para poder realizar 
+    mi funcion de JS que despliega el modal de carrito de compra si se falla en la condición -->
 </head>
 <body>
     <nav id="navBar"></nav>
@@ -25,13 +27,32 @@
     </div>
     <div id="carouselExampleCaptions" class="carousel slide my-3"></div>
     <br>
-    <div class="container"> <!-- Agrego esto para empezar a realizar el filtro de productos -->
+    <!-- Agrego esto para empezar a realizar el filtro de productos -->
+    <div class="container"> 
         <div class="text-center" id="placeYbotones">
-        <input type="text" placeholder="¿Qué prenda buscas?" class="input" id="prendaBusca" style="text-align: center; width: 438px;">
+        <input type="text" placeholder="¿Qué prenda buscas?" class="input" id="prendaBusca" style="text-align: center;">
         <button class="btn btn-primary botones" id="BotonFiltro">Filtrar</button>
         <button class="btn btn-primary botones" id="BotonTodo">Mostrar todo</button>
         </div>
     </div>
+    <!-- Aqui termina -->
+     
+    <!-- Modal que se desplegara cuando el boton de agregar productos -->
+<div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">¡Hola! Para comprar, ingresa a tu cuenta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="irAReferenciaInicioSesion()">Ingresar</button>
+        <button type="button" class="btn btn-primary" onclick="irAReferenciaRegistrar()">Crear cuenta</button>
+      </div>
+    </div>
+  </div>
+</div>
+     <!--  Aqui termina el modal -->
     <br>
     <div class="container row-cols-4 text-center">
     <a class="btn btn-primary botones d-none"  href="./index.html" role="button">Promociones</a> <!--Botón para después-->

@@ -46,16 +46,29 @@ function loadNavbar() {
     const sesionActiva = JSON.parse(localStorage.getItem('sesion_activa'));
     let usuario = '';
     if (sesionActiva && sesionActiva.email) {
+        const contadorCarrito=((JSON.parse(localStorage.getItem(sesionActiva.email))).bolsaDeCompras).length;
         usuario = `
+
+            <li class="nav-item">
+                <span> ${contadorCarrito}</span> 
+            </li>
+            <li class="nav-item">
+                
+                <a class="nav-link p-0" href="../carritoCompras.html">
+                   <i class="bi bi-cart2"></i>
+                </a>
+
+            </li>
             <li class="nav-item">
                 <div class="dropdown">
                 <a class="dropdown-toggle nav-link fs-3 fs-sm-4 fs-md-5 fs-lg-6" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
                 Hola  ${sesionActiva.name.split(' ')[0]}
-            </a>
-            <ul class="dropdown-menu" style="background-color:#404866; border:#404866;">
-            <li><a class="dropdown-item" href="../index.html" onclick="cerrarSesion()" style="background-color:#404866;color:#e5ebd2;">Cerrar Sesion</a></li>
-            </ul>
-            </div>
+                </a>
+                <ul class="dropdown-menu" style="background-color:#404866; border:#404866;">
+                <li>
+                <a class="dropdown-item" href="../index.html" onclick="cerrarSesion()" style="background-color:#404866;color:#e5ebd2;">Cerrar Sesion</a></li>
+                </ul>
+                </div>
             </li>
         `;
     } else {

@@ -2,6 +2,8 @@ let productCard = document.getElementById("productCard");
 const BotonFiltro=document.getElementById("BotonFiltro");
 const prendaBusca = document.getElementById("prendaBusca");
 const BotonTodo=document.getElementById("BotonTodo");
+const carritoModal = document.getElementById("carritoModal");
+
 
 let arregloProductos= [];
 
@@ -35,7 +37,7 @@ function addItem(item) {
     <p class="card-text descripcion">${item.description}</p>
     <div class="card-text descripcion">$ ${item.price} MXN ${mostrarEstrellas(generarCalificacion())}</div>
   </div>
-  <a href="#" class="btnCard" style="margin: 10px auto;">Agregar a Carrito</a>    
+  <button type="button" id=${item.modelo} class="btnCard" style="margin: 10px auto;" onclick="agregarProductosCarrito(event)" >Agregar a Carrito</button>   
 </div>
 `  //Agregar después la referencia a la página del articulo individual
     
@@ -49,6 +51,7 @@ addItem({
     img: './assets/calcetas 1.jpg',
     description: "Calcetas transpirables - Gris",
     price: 100,
+    modelo: 11
 
 });
 arregloProductos.push({
@@ -56,163 +59,190 @@ arregloProductos.push({
     img: './assets/calcetas 1.jpg',
     description: "Calcetas transpirables - Gris",
     price: 100,
+    modelo: 11
 
 });
 addItem({
     'name': 'Short',
     'img': './assets/short 1.jpg',
     'description': 'Short diseñado para correr - Gris',
-    'price': 250
+    'price': 250,
+    modelo: 12
 })
 arregloProductos.push(
     {
         name: 'Short',
         img: './assets/short 1.jpg',
         description: 'Short diseñado para correr - Gris',
-        price: 250
+        price: 250,
+        modelo: 12
     }
 )
 addItem({
     'name': 'Blusa',
     'img': './assets/sud 5.jpg',
     'description': 'Blusa diseñada para ejercicios de yoga - Negro',
-    'price': 300
+    'price': 300,
+    modelo: 13
 });
 arregloProductos.push(
     {
         name: 'Blusa',
         img: './assets/sud 5.jpg',
         description: 'Blusa diseñada para ejercicios de yoga - Negro',
-        price: 300
+        price: 300,
+        modelo: 13
     }
 )
 addItem({
     'name': 'Sudadera para mujer',
     'img': './assets/sud 1.jpg',
     'description': 'Sudadera deportiva para toda ocasión - Verde',
-    'price': 250
+    'price': 250,
+    modelo: 14
 })
 arregloProductos.push(
     {
         'name': 'Sudadera para mujer',
         'img': './assets/sud 1.jpg',
         'description': 'Sudadera deportiva para toda ocasión - Verde',
-        'price': 250
+        'price': 250,
+        modelo: 14
     }
 )
 addItem({
     'name': 'Suéter térmico',
     'img': './assets/sud 2.jpg',
     'description': 'Suéter térmico para soportar temperaturas frías - Negro',
-    'price': 300
+    'price': 300,
+    modelo: 15
 });
 arregloProductos.push(
     {
         'name': 'Suéter térmico',
         'img': './assets/sud 2.jpg',
         'description': 'Suéter térmico para soportar temperaturas frías - Negro',
-        'price': 300
+        'price': 300,
+        modelo: 15
     }
 )
 addItem({
     'name': 'Sudadera Azul',
     'img': './assets/sud 3.jpg',
     'description': 'Sudadera casual deportiva para correr - Azul Marino',
-    'price': 350
+    'price': 350,
+    modelo: 16
 })
 arregloProductos.push(
     {
         'name': 'Sudadera Azul',
         'img': './assets/sud 3.jpg',
         'description': 'Sudadera casual deportiva para correr - Azul Marino',
-        'price': 350
+        'price': 350,
+        modelo: 16
     }
 )
 addItem({
     'name': 'Camisa sin tirantes',
     'img': './assets/sud 4.jpg',
     'description': 'Camisa sin tirantes transpirable - Negro/Verde',
-    'price': 200
+    'price': 200,
+    modelo: 17
 })
 arregloProductos.push(
     {
         'name': 'Camisa sin tirantes',
         'img': './assets/sud 4.jpg',
         'description': 'Camisa sin tirantes transpirable - Negro/Verde',
-        'price': 200
+        'price': 200,
+        modelo: 17
     }
 )
 addItem({
     'name': 'Top diseñado para correr',
     'img': './assets/top 2.jpg',
     'description': 'Top para mujer - Negro',
-    'price': 150
+    'price': 150,
+    modelo: 18
 });
 arregloProductos.push(
     {
         'name': 'Top diseñado para correr',
         'img': './assets/top 2.jpg',
         'description': 'Top para mujer - Negro',
-        'price': 150
+        'price': 150,
+        modelo: 18
     }
 )
 addItem({
     'name': 'Top elástico',
     'img': './assets/top 1.jpg',
     'description': 'Top para mujer - Negro',
-    'price': 150
+    'price': 150,
+    modelo: 19
 })
 arregloProductos.push(
     {
         'name': 'Top elástico',
         'img': './assets/top 1.jpg',
         'description': 'Top para mujer - Negro',
-        'price': 150
+        'price': 150,
+        modelo: 19
     }
 )
 addItem({
     'name': 'Gorro para invierno',
     'img': './assets/gorra 1.jpg',
     'description': 'Gorro para correr diseñado para frías temperaturas- Verde militar',
-    'price': 150
+    'price': 150,
+    modelo: 20
 });
 arregloProductos.push(
     {
         'name': 'Gorro para invierno',
         'img': './assets/gorra 1.jpg',
         'description': 'Gorro para correr diseñado para frías temperaturas- Verde militar',
-        'price': 150
+        'price': 150,
+        modelo: 20
     }
 )
 addItem({
     'name': 'Gorra para correr',
     'img': './assets/gorra 2.jpg',
     'description': 'Gorra diseñada para correr  grandes distancias - Rosa',
-    'price': 150
+    'price': 150,
+    modelo: 21
 })
 arregloProductos.push(
     {
         'name': 'Gorra para correr',
         'img': './assets/gorra 2.jpg',
         'description': 'Gorra diseñada para correr  grandes distancias - Rosa',
-        'price': 150
+        'price': 150,
+        modelo: 21
     }
 )
 addItem({
     'name': 'Gorra deportiva',
     'img': './assets/gorra 4.jpg',
     'description': 'Gorra transpirable deportiva - Negra',
-    'price': 150
+    'price': 150,
+    modelo: 22
     
 })
 arregloProductos.push({
     'name': 'Gorra deportiva',
     'img': './assets/gorra 4.jpg',
     'description': 'Gorra transpirable deportiva - Negra',
-    'price': 150
+    'price': 150,
+    modelo: 22
     
 })
 
+function encontrarRegresarProductoPorId(array,id){ //Funcion para que me regrese un obj por medio de su modelo
+    const encontrado = array.find(ob => ob.modelo === id);
+    return encontrado;
+}
 
 //window.addEventListener("load", function(event){
 let arrraP= [];   
@@ -236,7 +266,11 @@ let arrraP= [];
             arregloProductos.push(element)
         }
     });
+   
     
+
+    //Subiremos arreglo total de productos al local, con el fin de que por medio de su id pueda identificarlos en el carrito
+    localStorage.setItem("AllProducts", JSON.stringify(arregloProductos));
     
     
     /////// AQUI EMPIEZO A ESCIRBIR EL CODIGO PARA IMPLEMENTAR EL FILTRADO 
@@ -248,7 +282,6 @@ let arrraP= [];
         while (productCard.firstChild) {
             productCard.removeChild(productCard.firstChild);
           }
-          
         const filtrado = (productos = [], texto) => {
             return productos.filter(item => item.name.toLowerCase().trim().includes(texto.toLowerCase().trim()));
         }  
@@ -264,11 +297,53 @@ let arrraP= [];
         while (productCard.firstChild) {
         productCard.removeChild(productCard.firstChild);}
         arregloProductos.forEach(i => addItem(i));
+        prendaBusca.value="";
     });
+    
+// Aqui empiezo a regirstra el progreso del boton de agregar a carrito
+function agregarProductosCarrito(event){ //Agregue event para traer el id del boton ya que el id del boton estara asociado a el id del producto
+    if(localStorage.getItem("sesion_activa") !== null){
+        let emaill=(JSON.parse(localStorage.getItem("sesion_activa"))).email;
+       
+        //(JSON.parse(localStorage.getItem(`${emaill}`))).contador++;
+        //(JSON.parse(localStorage.getItem("sesion_activa"))).contador++;
+         //Seccion para desarrollar la busqueda del producto en un arreglo del local storage y agregarlo a un arreglo que tiene como propiedad la persona
+         const idDelBoton =parseInt(event.target.id);  //obtienes el id
+         //window.alert((encontrarRegresarProductoPorId(arregloProductos,idDelBoton)).name)
+       // window.alert(idDelBoton);
+        //window.alert(arregloProductos[0].name + idDelBoton)
+         //Ir por el producto
+        let productoEncontrado=encontrarRegresarProductoPorId(arregloProductos, idDelBoton);
+        //window.alert(productoEncontrado.name)
+        let arregloConNuevoValor=(JSON.parse(localStorage.getItem(`${emaill}`))).bolsaDeCompras
+        arregloConNuevoValor.push(productoEncontrado)
+        
 
 
+        let datos={
+            nombre:(JSON.parse(localStorage.getItem(`${emaill}`))).nombre,
+            correo:(JSON.parse(localStorage.getItem(`${emaill}`))).correo,
+            telefono: (JSON.parse(localStorage.getItem(`${emaill}`))).telefono,
+            contraseña: (JSON.parse(localStorage.getItem(`${emaill}`))).contraseña,
+            bolsaDeCompras: arregloConNuevoValor
+        }
+        localStorage.setItem((JSON.parse(localStorage.getItem(`${emaill}`))).correo, JSON.stringify(datos))
+        window.location.reload();
+
+       
 
 
+    }else{
+        $('#carritoModal').modal('show');  // Para que se le aparezca un modal que le dice que debe de iniciar o regirstrase antes de agregar al carrito
+    }   
+};
+//Funciones para redirigir a otra pagina cuando presionas los botones que salen cuando el usuario quiere agregar a carrito y no esta con sesion activa
+function irAReferenciaRegistrar() {
+    window.location.href = "../registroUsuarios.html";
+}
+function irAReferenciaInicioSesion() {
+    window.location.href = "../login.html";
+}
 
 
 

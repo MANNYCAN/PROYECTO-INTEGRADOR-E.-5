@@ -167,7 +167,9 @@ function showAlert(element, message) {
             nombre: User_name.value.trim(),
             correo: user_email.value.trim(),
             telefono: user_phoneNumber.value.trim(),
-            contraseña: user_password.value.trim()
+            contraseña: user_password.value.trim(),
+            bolsaDeCompras: []
+
         };
 
          localStorage.setItem(`${user_email.value.trim()}`,JSON.stringify(Usuario));
