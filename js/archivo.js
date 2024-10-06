@@ -50,9 +50,6 @@ function loadNavbar() {
         usuario = `
 
             <li class="nav-item">
-                <span> ${contadorCarrito}</span> 
-            </li>
-            <li class="nav-item">
                 
                 <a class="nav-link p-0" href="../carritoCompras.html">
                    <i class="bi bi-cart2"></i>

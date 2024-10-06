@@ -383,3 +383,10 @@ Haciendo responsivos los botones de busqueda
         }
       }
       
+      .btnSubirBoton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+        
+    }

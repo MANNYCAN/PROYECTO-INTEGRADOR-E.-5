@@ -3,7 +3,7 @@ const BotonFiltro=document.getElementById("BotonFiltro");
 const prendaBusca = document.getElementById("prendaBusca");
 const BotonTodo=document.getElementById("BotonTodo");
 const carritoModal = document.getElementById("carritoModal");
-
+const contadorCarritoC=document.getElementById("contadorCarritoC");
 
 let arregloProductos= [];
 
@@ -51,7 +51,7 @@ addItem({
     img: './assets/calcetas 1.jpg',
     description: "Calcetas transpirables - Gris",
     price: 100,
-    modelo: 11
+    modelo: 5467
 
 });
 arregloProductos.push({
@@ -59,7 +59,7 @@ arregloProductos.push({
     img: './assets/calcetas 1.jpg',
     description: "Calcetas transpirables - Gris",
     price: 100,
-    modelo: 11
+    modelo: 5467
 
 });
 addItem({
@@ -299,7 +299,23 @@ let arrraP= [];
         arregloProductos.forEach(i => addItem(i));
         prendaBusca.value="";
     });
+    function iniciarConTodoCarrito(){
+        if(localStorage.getItem("sesion_activa") !== null){
+        let emaill=(JSON.parse(localStorage.getItem("sesion_activa"))).email;
+        let cont=(JSON.parse(localStorage.getItem(`${emaill}`))).bolsaDeCompras.length;
+
+            contadorCarritoC.insertAdjacentHTML("afterbegin",
+                `
+                ${cont}
+                <i class="bi bi-cart2"> </i>
+                `
     
+            );
+        }
+    }
+    iniciarConTodoCarrito();
+
+
 // Aqui empiezo a regirstra el progreso del boton de agregar a carrito
 function agregarProductosCarrito(event){ //Agregue event para traer el id del boton ya que el id del boton estara asociado a el id del producto
     if(localStorage.getItem("sesion_activa") !== null){
@@ -319,7 +335,7 @@ function agregarProductosCarrito(event){ //Agregue event para traer el id del bo
         arregloConNuevoValor.push(productoEncontrado)
         
 
-
+        
         let datos={
             nombre:(JSON.parse(localStorage.getItem(`${emaill}`))).nombre,
             correo:(JSON.parse(localStorage.getItem(`${emaill}`))).correo,
@@ -328,8 +344,17 @@ function agregarProductosCarrito(event){ //Agregue event para traer el id del bo
             bolsaDeCompras: arregloConNuevoValor
         }
         localStorage.setItem((JSON.parse(localStorage.getItem(`${emaill}`))).correo, JSON.stringify(datos))
-        window.location.reload();
+        //window.location.reload();
+        while (contadorCarritoC.firstChild) {
+            contadorCarritoC.removeChild(contadorCarritoC.firstChild);
+          }
+        contadorCarritoC.insertAdjacentHTML("afterbegin",
+            `
+            ${arregloConNuevoValor.length}
+            <i class="bi bi-cart2"> </i>
+            `
 
+        );
        
 
 
@@ -344,9 +369,6 @@ function irAReferenciaRegistrar() {
 function irAReferenciaInicioSesion() {
     window.location.href = "../login.html";
 }
-
-
-
 
 
 
