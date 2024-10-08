@@ -315,7 +315,7 @@ Haciendo responsivos los botones de busqueda
         color: #E5EBD2;
         text-decoration: none;
         border-radius: 25px;
-        line-height: 40px;
+        line-height: 30px;
         text-align: center;
         
     }
@@ -389,4 +389,12 @@ Haciendo responsivos los botones de busqueda
         right: 20px;
         z-index: 100;
         
+    }
+
+    #cuentaCompras{
+    background-color: #404866; /* Rectángulo con fondo verde grisáceo */
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+    color: #e5ebd2; /* Texto dentro del rectángulo en color claro */
     }

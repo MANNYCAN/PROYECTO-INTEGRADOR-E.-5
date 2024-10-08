@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./nosotros.css">
-    
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,65 +18,66 @@
     <link rel="stylesheet" href="./footer/styleFooter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-    
-    <nav id="navBar"></nav> 
 
-    <h2>Carrito de Compras</h1>
-    <br>
-    <br>
-    
-    <div class="container">
-        <div class="row">
-            <!-- Columna 1 (para dispositivos grandes y más grandes) -->
-            <div class="col-lg-3">
-                <button id="btnAgregar" class="btn btn-primary botones" type="button" onclick='window.location.href="./listaDeProductos.html"'>Seguir comprando</button>
-                <button id="btnClear" class="btn btn-primary botones" type="button">Limpiar todo</button>
+    <nav id="navBar"></nav>
+
+    <h2>Carrito de Compras</h2>
+        <br>
+        <br>
+
+        <!-- Esta seccion fue dividida en dos filas para poder mantener una responsividad a la hora de agregar estilos -->
+        <div class="container ">
+            <div class="row justify-content-center">
+                <!-- Columna 1 (para dispositivos grandes y más grandes) -->
+                <div class="col col-sm col-lg-3  text-center">
+                    <button id="btnAgregar" class="btn btn-primary botones" type="button"
+                        onclick='window.location.href="./listaDeProductos.html"'>Seguir comprando</button>
+                    <button id="btnClear" class="btn btn-primary botones" type="button">Limpiar todo</button>
+                </div>
             </div>
-
-            <!-- Columna 2 (para dispositivos grandes y más grandes) -->
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-6">Resumen</div>
-                    <div class="col-6" id="contadorTabla"></div>
+            <div class="row justify-content-center text-center">
+                <!-- Columna 2 (para dispositivos grandes y más grandes) -->
+                <div class="col-lg-9" id="cuentaCompras">
+                    <div class="row">
+                        <div class="col-6">Resumen</div>
+                        <div class="col-6" id="contadorTabla"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Total en productos: </div>
+                        <div class="col-6" id="totalEnProductos"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Total: </div>
+                        <div class="col-6" id="cantidadAPagar"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-6">Total en productos: </div>
-                    <div class="col-6" id="totalEnProductos"></div>
-                </div>
-                <div class="row">
-                    <div class="col-6">Total: </div>
-                    <div class="col-6" id="cantidadAPagar"></div>
-                </div>  
             </div>
         </div>
-    </div>
 
 
 
-    <br>
-    <br>
-    
-     <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="tablaListaCompras">
-           
-           
+        <br>
+        <br>
 
-        </tbody>
-      </table>
-
-    
-      
-
+        <!-- Queda pendiente el estilo de la tabla se intento mediante selectores de id y clases, sin embargo al cargar 
+         la pagina se carga el estilo y despues de un parpadeo se devuelve al formato en fondo blanco y texto negro -->
+        <div class="container ">
+            <table class="table" id="listaCompras">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="tablaListaCompras">
+                </tbody>
+            </table>
+        </div>
 
 
 
@@ -105,12 +107,17 @@
 
 
 
-    <footer id="footer-placeholder"></footer>
-    <script src="./js/archivo.js"></script>
-    <script src="./js/carritoCompras.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+
+
+
+
+        <footer id="footer-placeholder"></footer>
+        <script src="./js/archivo.js"></script>
+        <script src="./js/carritoCompras.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
 </body>
+
 </html>

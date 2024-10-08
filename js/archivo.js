@@ -52,7 +52,7 @@ function loadNavbar() {
             <li class="nav-item">
                 
                 <a class="nav-link p-0" href="../carritoCompras.html">
-                   <i class="bi bi-cart2"></i>
+                   <i class="bi bi-cart2 fs-1 fs-sm-3"></i>
                 </a>
 
             </li>
