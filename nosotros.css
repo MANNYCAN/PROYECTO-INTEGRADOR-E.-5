@@ -403,3 +403,11 @@ Haciendo responsivos los botones de busqueda
         font-size: 20px;
         text-align: justify;
     }
+
+
+    #texto-degradado {
+        background: -webkit-linear-gradient(#92af5a,#4a741a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #E5EBD2; 
+      }
