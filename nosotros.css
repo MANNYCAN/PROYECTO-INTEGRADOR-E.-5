@@ -398,3 +398,8 @@ Haciendo responsivos los botones de busqueda
     margin-top: 20px;
     color: #e5ebd2; /* Texto dentro del rectángulo en color claro */
     }
+
+    #Nosotros_texto, #Valoresnosotros, #Visionnosotros, #Misionnosotros{
+        font-size: 20px;
+        text-align: justify;
+    }

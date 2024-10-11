@@ -86,7 +86,7 @@ function showAlert(element, message) {
     // Validación del nombre
     if(!valname()){
         User_name.style.border = "solid red medium"
-        showAlert(User_name, `El nombre debe tener al menos 3 letras y puede incluir hasta dos apellidos.`); 
+        showAlert(User_name, `Ingresa un nombre de al menos tres letras y un apellido`); 
         is_valid = false;
     } else {
         clearAlert(User_name); // Limpiar alerta si el campo es válido

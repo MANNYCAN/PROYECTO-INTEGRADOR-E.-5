@@ -63,7 +63,7 @@ function loadNavbar() {
                 </a>
                 <ul class="dropdown-menu" style="background-color:#404866; border:#404866;">
                 <li>
-                <a class="dropdown-item" href="../index.html" onclick="cerrarSesion()" style="background-color:#404866;color:#e5ebd2;">Cerrar Sesion</a></li>
+                <a class="dropdown-item" href="../index.html" onclick="cerrarSesion()" style="background-color:#404866;color:#e5ebd2;">Cerrar Sesión</a></li>
                 </ul>
                 </div>
             </li>
