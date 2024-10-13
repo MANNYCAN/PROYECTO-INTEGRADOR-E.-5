@@ -8,6 +8,10 @@
 .container-fluid, .navbar-toggler, .navbar-toggler-icon, .nav-link{
     color: #e5ebd2;
 }
+
+.navbar-toggler, .navbar-toggler-icon, .nav-link{
+    margin-right: 20px;
+}
 .navbar{
     
     padding: 0px;
@@ -67,12 +71,20 @@ h3{
 /* Estilo para el título "Acerca de Nosotros" */
 .acerca-titulo {
     text-align: center;
+    margin: 0px 0px 0px 0px;
     /* color: #11220b; Verde oscuro para el título principal */
     }
 
 /**
 Haciendo responsivos los botones de busqueda
 */
+#prendaBusca{
+    margin-right: 1%;
+}
+#BotonFiltro, #BotonTodo{
+    margin-right: 6%;
+}
+
 @media (max-width: 450px) {
         #prendaBusca{
             display: block; 
@@ -286,6 +298,24 @@ Haciendo responsivos los botones de busqueda
         border-color: #4a741a;
         
     }
+    .botonesFil{
+        background-color: #404866;
+        border-color: #404866;
+        font-family: "Public Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        color: #E5EBD2;
+        
+    }
+  
+
+    .botonesFil:hover{
+        background-color: #92af5a;
+        border-color: #4a741a;
+        color: #404866;
+        
+    }
 
     @media (max-width: 430px) {
         #contactenos_title{
@@ -406,8 +436,75 @@ Haciendo responsivos los botones de busqueda
 
 
     #texto-degradado {
-        background: -webkit-linear-gradient(#92af5a,#4a741a);
+        background: -webkit-linear-gradient(#4a741a,#4a741a);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: #E5EBD2; 
-      }
+    }
+
+   /* Estilo base para el contenedor y la imagen */
+#imgIndex {
+    position: relative;
+    width: 100%;           
+    max-width: 100%;       
+    margin: 0 auto;         
+} 
+#imgIndex img {
+    width: 100%;           
+    height: auto;          
+    object-fit: cover;      
+}
+@media (max-width: 768px) {
+    #imgIndex {
+    max-width: 90%;      
+    }
+}
+
+@media (max-width: 480px) {
+    #imgIndex {
+      padding: 10px;       /* Agregar espacio para que la imagen no toque los bordes */
+    }
+    
+}
+
+.btn-sobre-imagen {
+    position: absolute; 
+    top: 85%;           
+    left: 50%;          
+    transform: translate(-50%, -50%); /* Ajusta el botón para quedar justo en el centro */
+    background-color: #E5EBD2;
+    color: #4a741a;
+    font-family: "Public Sans", sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efecto hover en el botón */
+  .btn-sobre-imagen:hover {
+    background-color: #4a741a;
+    color: #E5EBD2;
+  }
+
+  @media (max-width: 768px) {
+    #imgIndex {
+      font-size: 0.9rem;  
+    }
+  
+    .btn-sobre-imagen {
+      padding: 8px 16px;  /* Reducir el padding en tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #imgIndex {
+      font-size: 0.8rem;  /* Escala más pequeña para móviles */
+    }
+  
+    .btn-sobre-imagen {
+      padding: 6px 12px;  /* Reducir más el padding en móviles */
+    }
+  }

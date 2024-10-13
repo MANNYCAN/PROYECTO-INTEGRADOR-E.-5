@@ -47,50 +47,50 @@ function addItem(item) {
 }
 
 addItem({
-    name: "Calcetas",
-    img: './assets/calcetas 1.jpg',
-    description: "Calcetas transpirables - Gris",
-    price: 100,
+    name: "Tenis DDM",
+    img: './assets/tennismuertos.png',
+    description: "Tenis de gamuza edición día de muertos",
+    price: 1500,
     modelo: 5467
 
 });
 arregloProductos.push({
-    name: "Calcetas",
-    img: './assets/calcetas 1.jpg',
-    description: "Calcetas transpirables - Gris",
-    price: 100,
+    name: "Tenis DDM",
+    img: './assets/tennismuertos.png',
+    description: "Tenis de gamuza edición día de muertos",
+    price: 1500,
     modelo: 5467
 
 });
 addItem({
-    'name': 'Short',
-    'img': './assets/short 1.jpg',
-    'description': 'Short diseñado para correr - Gris',
-    'price': 250,
+    'name': 'Tenis DDM V2',
+    'img': './assets/Tenismuertos2.png',
+    'description': 'Tenis deportivos nego-morado ddm',
+    'price': 2200,
     modelo: 12
 })
 arregloProductos.push(
     {
-        name: 'Short',
-        img: './assets/short 1.jpg',
-        description: 'Short diseñado para correr - Gris',
-        price: 250,
+        name: 'Tenis DDM V2',
+        img: './assets/Tenismuertos2.png',
+        description: 'Tenis deportivos nego-morado ddm',
+        price: 2200,
         modelo: 12
     }
 )
 addItem({
-    'name': 'Blusa',
-    'img': './assets/sud 5.jpg',
-    'description': 'Blusa diseñada para ejercicios de yoga - Negro',
-    'price': 300,
+    'name': 'Sudadera DDM',
+    'img': './assets/Sudaderadm.png',
+    'description': 'Sudadera negra día de muertos',
+    'price': 800,
     modelo: 13
 });
 arregloProductos.push(
     {
-        name: 'Blusa',
-        img: './assets/sud 5.jpg',
-        description: 'Blusa diseñada para ejercicios de yoga - Negro',
-        price: 300,
+        name: 'Sudadera DDM',
+        img: './assets/Sudaderadm.png',
+        description: 'Sudadera negra día de muertos',
+        price: 800,
         modelo: 13
     }
 )

@@ -21,3 +21,26 @@
     
 }
 
+  /* Estilo base para el contenedor y la imagen */
+  #imgProduct {
+    width: 100%;           
+    max-width: 100%;       
+    margin: 0 auto;         
+} 
+#imgProduct img {
+    width: 100%;           
+    height: auto;          
+    object-fit: cover;      
+}
+@media (max-width: 768px) {
+    #imgProduct {
+    max-width: 90%;      
+    }
+}
+
+@media (max-width: 480px) {
+    #imgProduct {
+      padding: 10px;       /* Agregar espacio para que la imagen no toque los bordes */
+    }
+    
+}

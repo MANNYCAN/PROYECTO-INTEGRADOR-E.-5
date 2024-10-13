@@ -11,19 +11,19 @@ function loadCarousel() {
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./assets/carousel 5.jpg" class="rounded mx-auto d-block img_carrusel" alt="Primer artículo de novedad">
+      <img src="./assets/Sudaderadm.png" class="rounded mx-auto d-block img_carrusel" alt="Primer artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
 
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./assets/carousel 2.jpg" class="rounded mx-auto d-block img_carrusel" alt="Segundo artículo de novedad">
+      <img src="./assets/tenisdm3.png" class="rounded mx-auto d-block img_carrusel" alt="Segundo artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
 
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./assets/carousel 4.jpg" class="rounded mx-auto d-block img_carrusel" alt="Tercer artículo de novedad">
+      <img src="./assets/adidasplayera.png" class="rounded mx-auto d-block img_carrusel" alt="Tercer artículo de novedad">
       <div class="carousel-caption d-none d-md-block">
 
       </div>
